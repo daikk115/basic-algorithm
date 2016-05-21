@@ -21,8 +21,9 @@ def check(row, column, positions):
 
 def xepHau(row, positions):
     if row == 8:
-        pp.pprint(positions)
-        return True
+        for tmp in positions:
+	    maps[tmp["row"]][tmp["column"]] = 1
+ 	return True
     for column in range(8):
         # print row, column
         # print positions
@@ -31,7 +32,6 @@ def xepHau(row, positions):
             tmp["row"] = row
             tmp["column"] = column
             positions.append(tmp)
-            maps[row][column] = 1
             if(xepHau(row+1, positions) is True):
                 return True
             else:
@@ -43,7 +43,8 @@ def xepHau(row, positions):
 
 if __name__ == '__main__':
     init_maps()
-    positions = xepHau(0, [])
+    xepHau(0, [])
+    pp.pprint(maps)
 
 
         
