@@ -3,12 +3,14 @@ import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
 maps = []
+N = 8
+
 
 def init_maps():
-    for i in range(8):
+    for i in range(N):
         tmp = []
-        for j in range(8):
-            tmp.append(0)
+        for j in range(N):
+            tmp.append("o")
         maps.append(tmp)
 
 def check(row, column, positions):
@@ -20,13 +22,15 @@ def check(row, column, positions):
     return True
 
 def xepHau(row, positions):
-    if row == 8:
+    if row == N:
+        """
+            if row == N that means every queens have been sorted
+        """
         for tmp in positions:
-	    maps[tmp["row"]][tmp["column"]] = 1
- 	return True
-    for column in range(8):
-        # print row, column
-        # print positions
+            maps[tmp["row"]][tmp["column"]] = "x"
+        return True
+
+    for column in range(N):
         if check(row, column, positions):
             tmp = {}
             tmp["row"] = row
@@ -43,6 +47,7 @@ def xepHau(row, positions):
 
 if __name__ == '__main__':
     init_maps()
+    # we start with row 0 and list position queens empty
     xepHau(0, [])
     pp.pprint(maps)
 

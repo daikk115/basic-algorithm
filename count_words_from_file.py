@@ -38,4 +38,4 @@ with open(sys.argv[1]) as f:
 
 output = sorted(output, key=lambda word: (word[0], word[1]), reverse=True)
 for word in output:
-    print word
+    print(word)
