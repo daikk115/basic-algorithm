@@ -1,12 +1,13 @@
 # examination
 
-- bài kiểm tra cho thực tập sinh
+- count_words_from_file.py
 
-cau1: xử lý văn bản và đếm số từ
-python cau1.py daikk
+python count_words_from_file.py filetest
 
-cau2: thuật toán xếp hậu
-python cau2.py
+- N queen solution with backtracking
 
-cau3: thuật toán kiểm tra B có là cây con của A (A,B là cây nhị phân)
-python cau3.py
+python n_queen_backtracking.py
+
+- compare two binary trees
+
+python compare_binary_trees.py
